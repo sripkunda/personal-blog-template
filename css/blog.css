@@ -53,6 +53,28 @@ nav h1:hover, nav h2:hover, nav h3:hover {
     border-left: #37352F 3px solid;
 }
 
+#mobile_menu_button {
+    transform: scale(0.9);
+    display: none; 
+    padding: 10px; 
+    background-color: #37352F;
+    color: white;
+    position: fixed; 
+    z-index: 2; 
+    bottom: 20px;
+    left: 20px;
+    border-radius: 5px;
+    opacity: 0.96;
+}
+
+#mobile_menu_buttom:hover {
+    cursor: pointer; 
+}
+
+.closed{
+    display: none; 
+}
+
 pre newline {
     display: block;
 }
@@ -65,8 +87,22 @@ img {
     margin-right: auto;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1300px) {    
+    #mobile_menu_button {
+        display: block; 
+    }
+
     nav {
         display: none;
+        padding: 10px;
+        left: calc(195px + 20px);
+        top: calc(100vh - (300px + 30px));
+        width: 150px;
+        max-height: 240px;
+        overflow-y: auto;
+        position: absolute fixed;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius: 5px;
     }
 }

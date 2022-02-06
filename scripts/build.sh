@@ -15,6 +15,7 @@ for f in *.md ; do
 done
 
 cp -R ../../css ../../build
+cp -R ../../assets ../../build
 
 end_time=`date +%s%N | cut -b1-13`
 echo "Build completed in `expr $end_time - $start_time`ms" 
