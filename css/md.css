@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+pre {
+    overflow:auto;
+}
+
+.katex {
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+::selection {
+    background-color: #CECDCA;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 50px;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: "Noto Sans", "Segoe UI", sans-serif;
+  color: #37352f;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding-bottom: 5vh;
+  padding-top: 5vh;
+  margin: auto;
+  width: 50em;
+  line-height: 25px;
+  font-size: 16.5px;
+}
+
+h1 {
+  text-align: left;
+  font-size: 40px;
+  font-weight: 800;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  line-height: 37px;
+}
+
+h2 {
+  text-align: left;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+h3 {
+  text-align: left;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+blockquote {
+  border-left: #37352f 3px solid;
+  padding-left: 14px;
+  margin-right: 3em;
+  margin-left: 0;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  opacity: 0.7;
+}
+
+a {
+  opacity: 0.7;
+  text-decoration: underline 0.1px;
+  text-underline-offset: 3px;
+  color: #37352f;
+}
+
+a:visited {
+  color: #37352f;
+  opacity: 0.8;
+}
+
+a:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 1200px) {
+  body {
+    width: 80%;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  h2 {
+    font-size: 25.5px;
+  }
+
+  h3 {
+    font-size: 21.25px;
+  }
+
+  h4 {
+    font-size: 16px;
+  }
+
+  blockquote {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+}

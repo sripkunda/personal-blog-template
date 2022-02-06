@@ -1,0 +1,27 @@
+{
+  "name": "sripkunda.github.io",
+  "version": "1.0.0",
+  "description": "My personal webpage, hosted through GitHub pages",
+  "scripts": {
+    "start": "./scripts/routine.sh",
+    "build": "./scripts/build.sh",
+    "deploy": "./scripts/deploy.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sripkunda/sripkunda.github.io.git"
+  },
+  "author": "Sri Pranav Kunda",
+  "bugs": {
+    "url": "https://github.com/sripkunda/sripkunda.github.io/issues"
+  },
+  "homepage": "https://github.com/sripkunda/sripkunda.github.io#readme",
+  "dependencies": {
+    "highlight.js": "^11.4.0",
+    "katex": "^0.15.2",
+    "markdown-it": "^12.3.2",
+    "markdown-it-highlightjs": "^3.6.0",
+    "markdown-it-texmath": "^0.9.7",
+    "mustache": "^4.2.0"
+  }
+}

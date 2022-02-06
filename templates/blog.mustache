@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="shortcut icon" href="/assets/favicon.jpg" />
+    <link rel="stylesheet" href="/css/md.css" />
+    <link rel="stylesheet" href="/css/blog.css" />
+    
+    <!-- Math and Code -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css" integrity="sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.js" integrity="sha384-VQ8d8WVFw0yHhCk5E8I86oOhv48xLpnDZx5T9GogA/Y84DcCKWXDmSDfn13bzFZY" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>
+    let headings = []; 
+    let navHeadings = [];
+    let content;
+    
+    function scrollBehavior(e) {
+        navHeadings.forEach(e => e.node.className = "");
+        let closest;
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            closest = navHeadings.length - 1;
+        } else {
+            const distances = Array.from(headings).map(e => Math.abs(e.getBoundingClientRect().top)); 
+            closest = distances.indexOf(Math.min(...distances)); 
+        }
+        const parent = navHeadings[closest].parent; 
+        const node = navHeadings[closest].node; 
+        navHeadings.filter(e => e.parent == parent || e.parent == node).forEach(e => e.node.className = "open");
+        navHeadings[closest].node.className = "selected open";
+    }
+
+    function load(e) {
+        content = document.getElementById("blog_content");
+        headings = content.querySelectorAll('h1, h2, h3');
+        const nav = document.getElementById("heading_tree");
+        document.title = headings[0].textContent || document.title;
+        headings.forEach((h, i) => { 
+            const node = h.cloneNode(true)
+            nav.append(node);
+            const getParent = (i) => {
+                if (!navHeadings[i - 1]) return; 
+                while (parseInt(navHeadings[i - 1]?.node.tagName[1]) >= parseInt(h.tagName[1])) {
+                    i--; 
+                }
+                return navHeadings[i - 1]?.node;
+            }
+            navHeadings.push({ node: node, parent: getParent(i) });
+            node.onclick = () => {
+                headings[i].scrollIntoView(true);
+            }
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", load);
+    document.addEventListener("scroll", scrollBehavior);
+</script>
+</head>
+<body>
+    <nav id="side_nav">
+    <h1 class="selected" onclick="window.location = '../'">Back Home</h1>
+    <span id="heading_tree">
+    </span>
+    <br>
+    <h1 onclick="window.scrollTo(0, 0)">Jump To Top</h1>
+    <h1 onclick="window.scrollTo(0, document.body.scrollHeight)">Jump To Bottom</h1>
+    </nav>
+    <div id="blog_content">
+        {{{content}}}
+    </div>
+</body>
+</html>

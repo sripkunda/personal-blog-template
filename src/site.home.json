@@ -1,0 +1,55 @@
+{
+    "title": "First Last",
+    "quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    "links": [
+        {
+            "link": true,
+            "url": "https://github.com/sripkunda",
+            "text": "GitHub"
+        },
+        {
+            "link": true,
+            "url": "https://linkedin.com/in/sripkunda",
+            "text": "LinkedIn"
+        },
+        {
+            "last": true,
+            "url": "mailto:sripkunda@gmail.com",
+            "text": "Email"
+        }
+    ],
+    "sections": [
+        {
+            "section": true,
+            "title": "Writing",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+            "items": [
+                {
+                    "text": "My First Post",
+                    "url": "./blog/my-first-post.html",
+                    "target": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+                }
+            ]
+        },
+        {
+            "last": true,
+            "title": "Section 2",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
+            "items": [
+                {
+                    "text": "Entry 2.1",
+                    "url": "",
+                    "target": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+                },
+                {
+                    "text": "Entry 2.2",
+                    "url": "",
+                    "target": "",
+                    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+hr {
+    opacity: 0.3;
+}
+
+blockquote {
+    opacity: 1;
+}
+body header section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+body header section div {
+    margin-bottom: 20px;
+}
+
+body > section {
+    margin-top: 5px;
+}
+
+@media (min-width: 1200px) { 
+    blockquote {
+        border-left: #37352F 3px solid;
+        width: 55%;
+        margin-bottom: 0;
+    }
+}

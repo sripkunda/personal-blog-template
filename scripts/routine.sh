@@ -1,0 +1,1 @@
+while sleep 1 ; do find . -path '*' | entr -s ./scripts/build.sh ; done
