@@ -2,6 +2,19 @@ hr {
     opacity: 0.3;
 }
 
+a {
+    color: #37352f;
+    text-decoration: underline 0.1px; 
+}
+
+a:visited {
+    color: #37352f;
+}
+
+a:hover {
+    opacity: 0.9;
+}
+
 blockquote {
     opacity: 1;
 }

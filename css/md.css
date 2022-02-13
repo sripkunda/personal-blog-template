@@ -9,12 +9,19 @@ pre {
     overflow-y: hidden;
 }
 
+.katex a {
+  text-decoration: none;
+}
+
+p {
+  padding-bottom: 2px;
+}
+
 ::selection {
     background-color: #CECDCA;
 }
 
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 50px;
 }
 
@@ -67,19 +74,19 @@ blockquote {
 }
 
 a {
-  opacity: 0.7;
-  text-decoration: underline 0.1px;
+  opacity: 1;
   text-underline-offset: 3px;
-  color: #37352f;
+  text-decoration: none;
+  color: #23527c
 }
 
 a:visited {
-  color: #37352f;
+  color: #23527c;
   opacity: 0.8;
 }
 
 a:hover {
-  opacity: 0.9;
+  text-decoration: underline 0.1px;
 }
 
 @media (max-width: 1200px) {

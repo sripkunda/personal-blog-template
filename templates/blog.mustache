@@ -44,13 +44,20 @@
     }
 
     function load(e) {
+        document.getElementById(window.location.hash?.substr(1))?.scrollIntoView();
         content = document.getElementById("blog_content");
         headings = content.querySelectorAll('h1, h2, h3');
         navBar = document.getElementsByTagName("nav")[0];
         const nav = document.getElementById("heading_tree");
         document.title = headings[0].textContent || document.title;
         headings.forEach((h, i) => { 
-            const node = h.cloneNode(true)
+            const node = h.cloneNode(true);
+            const a = node.getElementsByTagName("a")[0];
+            if (a) {
+                const content = a.textContent; 
+                a.remove(); 
+                node.innerText = content;
+            }
             nav.append(node);
             const getParent = (i) => {
                 if (!navHeadings[i - 1]) return; 
@@ -61,7 +68,7 @@
             }
             navHeadings.push({ node: node, parent: getParent(i) });
             node.onclick = () => {
-                headings[i].scrollIntoView(true);
+                headings[i].scrollIntoView({ behavior: 'smooth' });
             }
         });
     }
@@ -82,9 +89,8 @@
     <h1 class="selected" onclick="window.location = '../'">Back Home</h1>
     <span id="heading_tree">
     </span>
-    <br>
-    <h1 onclick="window.scrollTo(0, 0)">Jump To Top</h1>
-    <h1 onclick="window.scrollTo(0, document.body.scrollHeight)">Jump To Bottom</h1>
+    <h1 onclick="window.scrollTo({ left: 0, top: 0, behavior: 'auto' })">Jump To Top</h1>
+    <h1 onclick="window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: 'auto' })">Jump To Bottom</h1>
     </nav>
     <div id="blog_content">
         {{{content}}}

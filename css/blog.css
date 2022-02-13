@@ -1,3 +1,18 @@
+.header-anchor {
+    color: #37352f;
+    text-decoration: none;
+}
+
+.header-anchor:hover {
+    color: #37352f;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.header-anchor:visited {
+    color: #37352f;
+}
+
 nav {
     transform: translateX(-113%);
     width: 14%;
@@ -16,6 +31,11 @@ nav .selected {
 nav .open {
     display: block;
     border-spacing: 20px;
+}
+
+blockquote {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 nav h1 {
