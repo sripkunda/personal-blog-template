@@ -30,7 +30,7 @@
     </script>
     <title>{{title}}</title>
 </head>
-<body>
+<body onload="getAge()">
     <header>
         <h1>{{title}}</h1>
         <section>
@@ -52,12 +52,15 @@
         <section>
             <h2>{{{title}}}</h2>
             <p>{{{description}}}</p>
-            {{#items}}
-                <div>
-                    <h3><a href="{{url}}" target="{{target}}">{{{text}}}</a></h3>
-                    <p>{{{description}}}</p>
-                </div>
-            {{/items}}
+            
+            <div class="container">
+                {{#items}}
+                    <div class="showcase" onclick="window.open('{{url}}', '{{target}}');">
+                        <h3>{{{text}}}</h3>
+                        <p>{{{description}}}</p>
+                    </div>
+                {{/items}}
+            </div>
         </section>
         <hr>
         {{/section}}
@@ -65,14 +68,23 @@
         <section>
             <h2>{{{title}}}</h2>
             <p>{{{description}}}</p>
-            {{#items}}
-                <div>
-                    <h3><a href="{{url}}" target="{{target}}">{{text}}</a></h3>
-                    <p>{{{description}}}</p>
-                </div>
-            {{/items}}
+            
+            <div class="container">
+                {{#items}}
+                    <div class="showcase" onclick="window.open('{{url}}', '{{target}}');">
+                        <h3>{{{text}}}</h3>
+                        <p>{{{description}}}</p>
+                    </div>
+                {{/items}}
+            </div>
         </section>
         {{/last}}
     {{/sections}}
+
+    <script>
+        function getAge() {
+            Array.from(document.getElementsByClassName('age')).forEach(e => e.innerHTML = new Date(new Date() - new Date("{{birthday}}")).getUTCFullYear() - 1970);
+        }
+    </script>
 </body>
 </html>

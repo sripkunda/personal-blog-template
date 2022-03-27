@@ -3,21 +3,55 @@ hr {
 }
 
 a {
-    color: #37352f;
+    color: #000000;
     text-decoration: underline 0.1px; 
 }
 
 a:visited {
-    color: #37352f;
+    color: #000000;
 }
 
 a:hover {
-    opacity: 0.9;
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.showcase {
+    padding: 0 30px 0 30px;
+    margin-bottom: 20px;
+    color: black;
+    border: rgba(0, 0, 0, 0.13) solid 1px;
+    width: 80%;
+    cursor: pointer;
+}
+
+.showcase a {
+    text-decoration: none;
+}
+
+.showcase h3 {
+    color: black;
+    text-decoration: underline;
+}
+
+.showcase:hover {
+    background-color: black;
+    color: white;
+}
+
+.showcase:hover h3 {
+    color: white;
 }
 
 blockquote {
     opacity: 1;
 }
+
 body header section {
     display: flex;
     flex-direction: row;
@@ -37,5 +71,9 @@ body > section {
         border-left: #37352F 3px solid;
         width: 55%;
         margin-bottom: 0;
+    }
+    .showcase {
+        width: 40%;
+        margin-left: 20px;
     }
 }
